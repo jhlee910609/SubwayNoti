@@ -36,25 +36,25 @@ public class Remote {
         return result;
     }
 
-    public static void newTask(final TaskInterface taskInterface) {
+            public static void newTask(final TaskInterface taskInterface) {
 
-        new AsyncTask<String, Void, String>() {
+                new AsyncTask<String, Void, String>() {
 
-            @Override
-            protected String doInBackground(String... params) {
-                String result = "";
-                try {
-                    result = getData(params[0]);
-                    Log.i("NETWORK", result);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-                return result;
-            }
+                    @Override
+                    protected String doInBackground(String... params) {
+                        String result = "";
+                        try {
+                            result = getData(params[0]);
+                            Log.i("NETWORK", result);
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                        return result;
+                    }
 
-            @Override
-            protected void onPostExecute(String result) {
-                taskInterface.postExecute(result);
+                    @Override
+                    protected void onPostExecute(String result) {
+                        taskInterface.postExecute(result);
             }
         }.execute(taskInterface.getUrl());
     }

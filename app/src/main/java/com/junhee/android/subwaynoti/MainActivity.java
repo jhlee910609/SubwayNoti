@@ -11,6 +11,9 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
+
+import com.junhee.android.subwaynoti.domain.MySubwayTimeList;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,8 +22,7 @@ public class MainActivity extends AppCompatActivity {
 
     private CustomaAdapter adapter;
     private RecyclerView recyclerView;
-
-    final List<String> datas = new ArrayList<>();
+    TextView mainTitle, mainTime;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +30,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        setWidget();
+        setAdapter();
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -44,11 +48,13 @@ public class MainActivity extends AppCompatActivity {
 
     private void setWidget() {
         recyclerView = (RecyclerView) findViewById(R.id.recycler);
-
+        mainTime = (TextView) findViewById(R.id.list_time);
+        mainTitle = (TextView) findViewById(R.id.list_title);
     }
 
     private void setAdapter() {
         adapter = new CustomaAdapter(this);
+        adapter.setDatas(MySubwayTimeList.list);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
     }
@@ -73,5 +79,11 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        adapter.notifyDataSetChanged();
     }
 }

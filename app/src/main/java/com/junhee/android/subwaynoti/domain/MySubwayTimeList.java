@@ -7,9 +7,10 @@ import java.util.List;
  * Created by JunHee on 2017. 7. 6..
  */
 
-public class SubwayTimeList {
+public class MySubwayTimeList {
 
-    public static List<SubwayTime> list = new ArrayList<>();
+    public static List<MySubwayTime> list = new ArrayList<>();
 
-
+    public MySubwayTimeList() {
+    }
 }

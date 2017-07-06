@@ -8,7 +8,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.junhee.android.subwaynoti.domain.SubwayTime;
+import com.junhee.android.subwaynoti.domain.MySubwayTime;
+import com.junhee.android.subwaynoti.domain.MySubwayTimeList;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,16 +21,15 @@ import java.util.List;
 public class CustomaAdapter extends RecyclerView.Adapter<CustomaAdapter.Holder> {
 
     private Context context;
-    private List<SubwayTime> datas = new ArrayList<>();
+    private List<MySubwayTime> datas = new ArrayList<>();
 
     public CustomaAdapter(Context context) {
         this.context = context;
     }
 
-    public void setData(List<SubwayTime> datas){
+    public void setDatas(List<MySubwayTime> datas) {
         this.datas = datas;
     }
-
 
     @Override
     public Holder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -39,15 +39,15 @@ public class CustomaAdapter extends RecyclerView.Adapter<CustomaAdapter.Holder> 
 
     @Override
     public void onBindViewHolder(Holder holder, int position) {
-        SubwayTime subwayTime = datas.get(position);
+        MySubwayTime subwayTime = MySubwayTimeList.list.get(position);
         holder.time.setText(subwayTime.time);
-        holder.time.setText(subwayTime.title);
+        holder.title.setText(subwayTime.title);
         holder.position = position;
     }
 
     @Override
     public int getItemCount() {
-        return datas.size();
+        return MySubwayTimeList.list.size();
     }
 
     class Holder extends RecyclerView.ViewHolder {
