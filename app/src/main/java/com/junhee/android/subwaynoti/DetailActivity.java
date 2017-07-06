@@ -28,7 +28,7 @@ public class DetailActivity extends AppCompatActivity implements TaskInterface {
     String currentSubLineNumb = "";
 
 
-    List<Row> stationInfo = new ArrayList<>();
+    List<Row> subwayInfos = new ArrayList<>();
     List<String> subwayLineNumb = new ArrayList<>();
 
     // TODO === 라인넘버
@@ -47,13 +47,16 @@ public class DetailActivity extends AppCompatActivity implements TaskInterface {
 
         setWidget();
         setSubwayNum();
-        setSpinnerAdapter();
+        setLineNumbAdapter();
+        setStationNameAdapter();
+        setStationTimeAdapter();
     }
 
     public void setSubwayNum() {
-        subwayLineNumb.add("선택하시오");
-        subwayLineNumb.add("1호선");
-        subwayLineNumb.add("2호선");
+        subwayLineNumb.add("선택하시오.....!");
+        for (int i = 1; i <= 9; i++) {
+            subwayLineNumb.add(i + " 호선");
+        }
     }
 
     public void setWidget() {
@@ -73,45 +76,52 @@ public class DetailActivity extends AppCompatActivity implements TaskInterface {
     List<String> stationTimes = new ArrayList<>();
 
     public void setLineNumbAdapter() {
-        lineNumbAdapter = new ArrayAdapter<String>(this,
-                android.R.layout.simple_spinner_dropdown_item, subwayLineNumb);
+        lineNumbAdapter = new ArrayAdapter<String>(DetailActivity.this, android.R.layout.simple_dropdown_item_1line, subwayLineNumb);
+        spinner_subLine.setPrompt("호선을 선택하시오..");
         spinner_subLine.setAdapter(lineNumbAdapter);
-        spinner_subLine.setPrompt("호선을 고르시오..");
         spinner_subLine.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int index, long l) {
-                switch (index) {
+                switch (adapterView.getSelectedItemPosition()) {
+
                     case 0:
+                        Toast.makeText(getApplicationContext(), "지하철 호선 선택!!", Toast.LENGTH_SHORT).show();
                         break;
 
                     case 1:
-                        adapterView.setSelection(index);
-                        currentSubLineNumb = 1 + "";
-                        stationCodes.clear();
-                        stationNames.clear();
-                        setStationInfoUrl(1, 101, currentSubLineNumb);
-                        Remote.newTask(DetailActivity.this);
-
-                        for (Row row : stationInfo) {
-                            stationCodes.add(row.FR_CODE);
-                            stationNames.add(row.getSTATION_NM());
-                        }
-                        stationNameAdapter.notifyDataSetChanged();
+                        setStationList(index);
                         break;
 
                     case 2:
-                        adapterView.setSelection(index);
-                        currentSubLineNumb = 2 + "";
-                        stationCodes.clear();
-                        stationNames.clear();
-                        setStationInfoUrl(1, 101, currentSubLineNumb);
-                        Remote.newTask(DetailActivity.this);
+                        setStationList(index);
+                        break;
 
-                        for (Row row : stationInfo) {
-                            stationCodes.add(row.FR_CODE);
-                            stationNames.add(row.getSTATION_NM());
-                        }
-                        stationNameAdapter.notifyDataSetChanged();
+                    case 3:
+                        setStationList(index);
+                        break;
+
+                    case 4:
+                        setStationList(index);
+                        break;
+
+                    case 5:
+                        setStationList(index);
+                        break;
+
+                    case 6:
+                        setStationList(index);
+                        break;
+
+                    case 7:
+                        setStationList(index);
+                        break;
+
+                    case 8:
+                        setStationList(index);
+                        break;
+
+                    case 9:
+                        setStationList(index);
                         break;
                 }
             }
@@ -123,20 +133,22 @@ public class DetailActivity extends AppCompatActivity implements TaskInterface {
         });
     }
 
+    public void setStationList(int index) {
+        setStationInfoUrl(1, 200, index + "");
+        Remote.newTask(DetailActivity.this);
+    }
+
     public void setStationNameAdapter() {
-        stationNameAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line, stationNames);
+        stationNameAdapter = new ArrayAdapter<String>(DetailActivity.this, android.R.layout.simple_dropdown_item_1line, stationNames);
         spinner_subStationName.setAdapter(stationNameAdapter);
-        spinner_subLine.setPrompt("역을 고르시오.");
-        Log.e("Detail", "======================spinner_subStationName");
         spinner_subStationName.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int index, long l) {
-                switch (index) {
-                    case 0:
-                        Toast.makeText(DetailActivity.this, (index + 1) + "선택", Toast.LENGTH_SHORT).show();
-                        Log.e("Detail", "========== currentStationCodes : " + currentStationCodes);
-                        break;
-                }
+
+                int currentStationIndex = adapterView.getSelectedItemPosition();
+                String current_station = adapterView.getSelectedItem().toString();
+                currentStationCodes = subwayInfos.get(currentStationIndex).getFR_CODE();
+                Log.e("Detail", "this is =================" + current_station + ", currentStationCodes = " + currentStationCodes);
             }
 
             @Override
@@ -147,26 +159,7 @@ public class DetailActivity extends AppCompatActivity implements TaskInterface {
     }
 
     public void setStationTimeAdapter() {
-        stationTimeAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line, stationTimes);
-        spinner_subTime.setAdapter(lineNumbAdapter);
-        spinner_subTime.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
 
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
-
-            }
-        });
-    }
-
-
-    public void setSpinnerAdapter() {
-        setLineNumbAdapter();
-        setStationNameAdapter();
-        setStationTimeAdapter();
     }
 
     private void setStationInfoUrl(int start, int end, String line_num) {
@@ -188,12 +181,20 @@ public class DetailActivity extends AppCompatActivity implements TaskInterface {
         Row[] row = data.getSearchSTNBySubwayLineService().getRow();
         Log.e("Detaill", "Detail ====== " + row.toString());
 
-        stationInfo.clear();
+        subwayInfos.clear();
+        stationCodes.clear();
+        stationNames.clear();
 
         for (Row tempRow : row) {
-            stationInfo.add(tempRow);
-            Log.e("Detail", "================= size" + stationInfo.size());
+            subwayInfos.add(tempRow);
+            stationCodes.add(tempRow.getFR_CODE());
+            stationNames.add(tempRow.getSTATION_NM());
+            Log.e("Detail", "================= size" + subwayInfos.size());
         }
+
+        Log.e("Detail", "Adapter Refresh =================");
+        lineNumbAdapter.notifyDataSetChanged();
+        stationNameAdapter.notifyDataSetChanged();
     }
 
     // json 스트링을 Data 오브젝트로 변환

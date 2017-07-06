@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">SubwayNoti</string>
     <string name="action_settings">Settings</string>
+    <string name="subway_numb_prompt">지하철 호선을 선택하시오.</string>
+    <string name="subway_station_prompt">역을 선택하시오.</string>
+    <string name="subway_time_prompt">시간을 선택하시오.</string>
 </resources>
