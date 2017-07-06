@@ -97,9 +97,12 @@ public class DetailActivity extends AppCompatActivity implements AdapterView.OnI
     public void onItemSelected(AdapterView<?> parent, View view, int i, long l) {
 
         switch (parent.getId()) {
+
             case R.id.spinner_subwayLine:
+
                 switch (parent.getSelectedItemPosition()) {
                     case 0:
+
                         break;
 
                     case 1:
@@ -112,17 +115,16 @@ public class DetailActivity extends AppCompatActivity implements AdapterView.OnI
                         for (Row row : station_info) {
                             fr_codes.add(row.FR_CODE);
                             station_names.add(row.getSTATION_NM());
-
                         }
                         subLineAdapter.notifyDataSetChanged();
                         break;
                 }
 
-            case R.id.spinner_station:
-
-                stationName = parent.getSelectedItem().toString();
-                Log.e("Detail", "============== stationName " + stationName);
-                break;
+//            case R.id.spinner_station:
+//
+//                stationName = parent.getSelectedItem().toString();
+//                Log.e("Detail", "============== stationName " + stationName);
+//                break;
         }
     }
 
