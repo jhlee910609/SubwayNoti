@@ -24,15 +24,14 @@ public class DetailActivity extends AppCompatActivity implements TaskInterface {
     Spinner spinner_subLine, spinner_subTime, spinner_subStationName;
     Button btnSave;
 
-    String current_station_codes = "";
-    String current_subLineNumb = "";
+    String currentStationCodes = "";
+    String currentSubLineNumb = "";
 
 
-    List<Row> station_info = new ArrayList<>();
-    List<String> subwayLine_list = new ArrayList<>();
+    List<Row> stationInfo = new ArrayList<>();
+    List<String> subwayLineNumb = new ArrayList<>();
 
     // TODO === 라인넘버
-    String line_num = "";
 
     // TODO === Parsing URL
     String setStationInfoUrl = "";
@@ -49,13 +48,12 @@ public class DetailActivity extends AppCompatActivity implements TaskInterface {
         setWidget();
         setSubwayNum();
         setSpinnerAdapter();
-
     }
 
     public void setSubwayNum() {
-        subwayLine_list.add("선택하시오");
-        subwayLine_list.add("1호선");
-        subwayLine_list.add("2호선");
+        subwayLineNumb.add("선택하시오");
+        subwayLineNumb.add("1호선");
+        subwayLineNumb.add("2호선");
     }
 
     public void setWidget() {
@@ -66,19 +64,19 @@ public class DetailActivity extends AppCompatActivity implements TaskInterface {
         btnSave = (Button) findViewById(R.id.btnSave);
     }
 
-    List<String> stationCodes = new ArrayList<>();
-    List<String> stationNames = new ArrayList<>();
-    List<String> stationTimes = new ArrayList<>();
-
     ArrayAdapter<String> lineNumbAdapter;
     ArrayAdapter<String> stationNameAdapter;
     ArrayAdapter<String> stationTimeAdapter;
 
+    List<String> stationCodes = new ArrayList<>();
+    List<String> stationNames = new ArrayList<>();
+    List<String> stationTimes = new ArrayList<>();
 
     public void setLineNumbAdapter() {
         lineNumbAdapter = new ArrayAdapter<String>(this,
-                android.R.layout.simple_spinner_dropdown_item, subwayLine_list);
+                android.R.layout.simple_spinner_dropdown_item, subwayLineNumb);
         spinner_subLine.setAdapter(lineNumbAdapter);
+        spinner_subLine.setPrompt("호선을 고르시오..");
         spinner_subLine.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int index, long l) {
@@ -87,32 +85,32 @@ public class DetailActivity extends AppCompatActivity implements TaskInterface {
                         break;
 
                     case 1:
-                        current_subLineNumb = 1 + "";
+                        adapterView.setSelection(index);
+                        currentSubLineNumb = 1 + "";
                         stationCodes.clear();
                         stationNames.clear();
-                        setStationInfoUrl(1, 101, current_subLineNumb);
+                        setStationInfoUrl(1, 101, currentSubLineNumb);
                         Remote.newTask(DetailActivity.this);
 
-                        for (Row row : station_info) {
+                        for (Row row : stationInfo) {
                             stationCodes.add(row.FR_CODE);
                             stationNames.add(row.getSTATION_NM());
                         }
-                        lineNumbAdapter.notifyDataSetChanged();
                         stationNameAdapter.notifyDataSetChanged();
                         break;
 
                     case 2:
-                        current_subLineNumb = 2 + "";
+                        adapterView.setSelection(index);
+                        currentSubLineNumb = 2 + "";
                         stationCodes.clear();
                         stationNames.clear();
-                        setStationInfoUrl(1, 101, current_subLineNumb);
+                        setStationInfoUrl(1, 101, currentSubLineNumb);
                         Remote.newTask(DetailActivity.this);
 
-                        for (Row row : station_info) {
+                        for (Row row : stationInfo) {
                             stationCodes.add(row.FR_CODE);
                             stationNames.add(row.getSTATION_NM());
                         }
-                        lineNumbAdapter.notifyDataSetChanged();
                         stationNameAdapter.notifyDataSetChanged();
                         break;
                 }
@@ -128,6 +126,7 @@ public class DetailActivity extends AppCompatActivity implements TaskInterface {
     public void setStationNameAdapter() {
         stationNameAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line, stationNames);
         spinner_subStationName.setAdapter(stationNameAdapter);
+        spinner_subLine.setPrompt("역을 고르시오.");
         Log.e("Detail", "======================spinner_subStationName");
         spinner_subStationName.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -135,7 +134,7 @@ public class DetailActivity extends AppCompatActivity implements TaskInterface {
                 switch (index) {
                     case 0:
                         Toast.makeText(DetailActivity.this, (index + 1) + "선택", Toast.LENGTH_SHORT).show();
-                        Log.e("Detail", "========== current_station_codes : " + current_station_codes);
+                        Log.e("Detail", "========== currentStationCodes : " + currentStationCodes);
                         break;
                 }
             }
@@ -189,11 +188,11 @@ public class DetailActivity extends AppCompatActivity implements TaskInterface {
         Row[] row = data.getSearchSTNBySubwayLineService().getRow();
         Log.e("Detaill", "Detail ====== " + row.toString());
 
-        station_info.clear();
+        stationInfo.clear();
 
         for (Row tempRow : row) {
-            station_info.add(tempRow);
-            Log.e("Detail", "================= size" + station_info.size());
+            stationInfo.add(tempRow);
+            Log.e("Detail", "================= size" + stationInfo.size());
         }
     }
 
