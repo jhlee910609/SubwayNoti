@@ -1,0 +1,120 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/JunHee/AndroidStudioProjects/SubwayNoti/app/src/main/AndroidManifest.xml:2:1-34:12
+	package
+		ADDED from /Users/JunHee/AndroidStudioProjects/SubwayNoti/app/src/main/AndroidManifest.xml:3:5-44
+		INJECTED from /Users/JunHee/AndroidStudioProjects/SubwayNoti/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/JunHee/AndroidStudioProjects/SubwayNoti/app/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /Users/JunHee/AndroidStudioProjects/SubwayNoti/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/JunHee/AndroidStudioProjects/SubwayNoti/app/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Users/JunHee/AndroidStudioProjects/SubwayNoti/app/src/main/AndroidManifest.xml:2:11-69
+	android:versionCode
+		INJECTED from /Users/JunHee/AndroidStudioProjects/SubwayNoti/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/JunHee/AndroidStudioProjects/SubwayNoti/app/src/main/AndroidManifest.xml
+uses-permission#android.permission.INTERNET
+ADDED from /Users/JunHee/AndroidStudioProjects/SubwayNoti/app/src/main/AndroidManifest.xml:5:5-67
+	android:name
+		ADDED from /Users/JunHee/AndroidStudioProjects/SubwayNoti/app/src/main/AndroidManifest.xml:5:22-64
+application
+ADDED from /Users/JunHee/AndroidStudioProjects/SubwayNoti/app/src/main/AndroidManifest.xml:7:5-32:19
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /Users/JunHee/.android/build-cache/f8c268a296bc691f714f169e10c065844da962c9/output/AndroidManifest.xml:9:5-20
+MERGED from [com.android.support:design:25.3.1] /Users/JunHee/.android/build-cache/3f5630d4ac96c803fd5a53bc8533772f764f7f21/output/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:appcompat-v7:25.3.1] /Users/JunHee/.android/build-cache/1e0904beb4089f1c5f5b5b7b993c9c55b59d4900/output/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:animated-vector-drawable:25.3.1] /Users/JunHee/.android/build-cache/c771c9ba24363164526ebd1f2df8e6e5553a061b/output/AndroidManifest.xml:26:5-20
+MERGED from [com.android.support:support-vector-drawable:25.3.1] /Users/JunHee/.android/build-cache/6ba5c9b12053ccc381aa5b8a6b915723159217db/output/AndroidManifest.xml:26:5-20
+MERGED from [com.android.support:transition:25.3.1] /Users/JunHee/.android/build-cache/78f761cfdbf4dfeab60a92dc31f83cd65e7b35a5/output/AndroidManifest.xml:26:5-20
+MERGED from [com.android.support:support-v4:25.3.1] /Users/JunHee/.android/build-cache/6397c09bcbe8ba8918ecf3d0259d46511118912d/output/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-fragment:25.3.1] /Users/JunHee/.android/build-cache/cf9eeb5080923b13bcd9e83a561ae50952c07ae8/output/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-media-compat:25.3.1] /Users/JunHee/.android/build-cache/fe5db607ff3eac9310346ad5cd2ec4da0c3a4d46/output/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-core-ui:25.3.1] /Users/JunHee/.android/build-cache/b8aba45a836b4ad56dcf5d0a68d1b6ed4686e26c/output/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-core-utils:25.3.1] /Users/JunHee/.android/build-cache/d083015550759cea92ee4bd2e4fedd5b77be00f7/output/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-compat:25.3.1] /Users/JunHee/.android/build-cache/e750d97a6b220d8f3162ae98dd7c1d9a4e378820/output/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:cardview-v7:25.3.1] /Users/JunHee/.android/build-cache/72c940f990dfe89e9e6d0e85d38a3941d31d5dab/output/AndroidManifest.xml:26:5-20
+	android:label
+		ADDED from /Users/JunHee/AndroidStudioProjects/SubwayNoti/app/src/main/AndroidManifest.xml:10:9-41
+	android:supportsRtl
+		ADDED from /Users/JunHee/AndroidStudioProjects/SubwayNoti/app/src/main/AndroidManifest.xml:12:9-35
+	android:roundIcon
+		ADDED from /Users/JunHee/AndroidStudioProjects/SubwayNoti/app/src/main/AndroidManifest.xml:11:9-54
+	android:allowBackup
+		ADDED from /Users/JunHee/AndroidStudioProjects/SubwayNoti/app/src/main/AndroidManifest.xml:8:9-35
+	android:icon
+		ADDED from /Users/JunHee/AndroidStudioProjects/SubwayNoti/app/src/main/AndroidManifest.xml:9:9-43
+	android:theme
+		ADDED from /Users/JunHee/AndroidStudioProjects/SubwayNoti/app/src/main/AndroidManifest.xml:13:9-40
+activity#com.junhee.android.subwaynoti.MainActivity
+ADDED from /Users/JunHee/AndroidStudioProjects/SubwayNoti/app/src/main/AndroidManifest.xml:14:9-23:20
+	android:label
+		ADDED from /Users/JunHee/AndroidStudioProjects/SubwayNoti/app/src/main/AndroidManifest.xml:16:13-45
+	android:theme
+		ADDED from /Users/JunHee/AndroidStudioProjects/SubwayNoti/app/src/main/AndroidManifest.xml:17:13-56
+	android:name
+		ADDED from /Users/JunHee/AndroidStudioProjects/SubwayNoti/app/src/main/AndroidManifest.xml:15:13-41
+intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
+ADDED from /Users/JunHee/AndroidStudioProjects/SubwayNoti/app/src/main/AndroidManifest.xml:18:13-22:29
+action#android.intent.action.MAIN
+ADDED from /Users/JunHee/AndroidStudioProjects/SubwayNoti/app/src/main/AndroidManifest.xml:19:17-69
+	android:name
+		ADDED from /Users/JunHee/AndroidStudioProjects/SubwayNoti/app/src/main/AndroidManifest.xml:19:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /Users/JunHee/AndroidStudioProjects/SubwayNoti/app/src/main/AndroidManifest.xml:21:17-77
+	android:name
+		ADDED from /Users/JunHee/AndroidStudioProjects/SubwayNoti/app/src/main/AndroidManifest.xml:21:27-74
+activity#com.junhee.android.subwaynoti.DetailActivity
+ADDED from /Users/JunHee/AndroidStudioProjects/SubwayNoti/app/src/main/AndroidManifest.xml:24:9-26:58
+	android:windowSoftInputMode
+		ADDED from /Users/JunHee/AndroidStudioProjects/SubwayNoti/app/src/main/AndroidManifest.xml:26:13-55
+	android:name
+		ADDED from /Users/JunHee/AndroidStudioProjects/SubwayNoti/app/src/main/AndroidManifest.xml:25:13-43
+service#com.junhee.android.subwaynoti.AlarmService
+ADDED from /Users/JunHee/AndroidStudioProjects/SubwayNoti/app/src/main/AndroidManifest.xml:28:9-31:47
+	android:enabled
+		ADDED from /Users/JunHee/AndroidStudioProjects/SubwayNoti/app/src/main/AndroidManifest.xml:30:13-35
+	android:exported
+		ADDED from /Users/JunHee/AndroidStudioProjects/SubwayNoti/app/src/main/AndroidManifest.xml:31:13-36
+	android:name
+		ADDED from /Users/JunHee/AndroidStudioProjects/SubwayNoti/app/src/main/AndroidManifest.xml:29:13-41
+uses-sdk
+INJECTED from /Users/JunHee/AndroidStudioProjects/SubwayNoti/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /Users/JunHee/.android/build-cache/f8c268a296bc691f714f169e10c065844da962c9/output/AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support:design:25.3.1] /Users/JunHee/.android/build-cache/3f5630d4ac96c803fd5a53bc8533772f764f7f21/output/AndroidManifest.xml:21:5-23:62
+MERGED from [com.android.support:appcompat-v7:25.3.1] /Users/JunHee/.android/build-cache/1e0904beb4089f1c5f5b5b7b993c9c55b59d4900/output/AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:animated-vector-drawable:25.3.1] /Users/JunHee/.android/build-cache/c771c9ba24363164526ebd1f2df8e6e5553a061b/output/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:25.3.1] /Users/JunHee/.android/build-cache/6ba5c9b12053ccc381aa5b8a6b915723159217db/output/AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:recyclerview-v7:25.3.1] /Users/JunHee/.android/build-cache/189bfeeb30967b97341ab6341e0a9ac9abdd0dfa/output/AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:transition:25.3.1] /Users/JunHee/.android/build-cache/78f761cfdbf4dfeab60a92dc31f83cd65e7b35a5/output/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:25.3.1] /Users/JunHee/.android/build-cache/6397c09bcbe8ba8918ecf3d0259d46511118912d/output/AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-fragment:25.3.1] /Users/JunHee/.android/build-cache/cf9eeb5080923b13bcd9e83a561ae50952c07ae8/output/AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-media-compat:25.3.1] /Users/JunHee/.android/build-cache/fe5db607ff3eac9310346ad5cd2ec4da0c3a4d46/output/AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-core-ui:25.3.1] /Users/JunHee/.android/build-cache/b8aba45a836b4ad56dcf5d0a68d1b6ed4686e26c/output/AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-core-utils:25.3.1] /Users/JunHee/.android/build-cache/d083015550759cea92ee4bd2e4fedd5b77be00f7/output/AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:support-compat:25.3.1] /Users/JunHee/.android/build-cache/e750d97a6b220d8f3162ae98dd7c1d9a4e378820/output/AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:cardview-v7:25.3.1] /Users/JunHee/.android/build-cache/72c940f990dfe89e9e6d0e85d38a3941d31d5dab/output/AndroidManifest.xml:20:5-43
+	tools:overrideLibrary
+		ADDED from [com.android.support:design:25.3.1] /Users/JunHee/.android/build-cache/3f5630d4ac96c803fd5a53bc8533772f764f7f21/output/AndroidManifest.xml:23:9-59
+	android:targetSdkVersion
+		INJECTED from /Users/JunHee/AndroidStudioProjects/SubwayNoti/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/JunHee/AndroidStudioProjects/SubwayNoti/app/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Users/JunHee/AndroidStudioProjects/SubwayNoti/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/JunHee/AndroidStudioProjects/SubwayNoti/app/src/main/AndroidManifest.xml
+meta-data#android.support.VERSION
+ADDED from [com.android.support:design:25.3.1] /Users/JunHee/.android/build-cache/3f5630d4ac96c803fd5a53bc8533772f764f7f21/output/AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:appcompat-v7:25.3.1] /Users/JunHee/.android/build-cache/1e0904beb4089f1c5f5b5b7b993c9c55b59d4900/output/AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:animated-vector-drawable:25.3.1] /Users/JunHee/.android/build-cache/c771c9ba24363164526ebd1f2df8e6e5553a061b/output/AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:support-vector-drawable:25.3.1] /Users/JunHee/.android/build-cache/6ba5c9b12053ccc381aa5b8a6b915723159217db/output/AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:recyclerview-v7:25.3.1] /Users/JunHee/.android/build-cache/189bfeeb30967b97341ab6341e0a9ac9abdd0dfa/output/AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:transition:25.3.1] /Users/JunHee/.android/build-cache/78f761cfdbf4dfeab60a92dc31f83cd65e7b35a5/output/AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:support-v4:25.3.1] /Users/JunHee/.android/build-cache/6397c09bcbe8ba8918ecf3d0259d46511118912d/output/AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-fragment:25.3.1] /Users/JunHee/.android/build-cache/cf9eeb5080923b13bcd9e83a561ae50952c07ae8/output/AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-media-compat:25.3.1] /Users/JunHee/.android/build-cache/fe5db607ff3eac9310346ad5cd2ec4da0c3a4d46/output/AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-core-ui:25.3.1] /Users/JunHee/.android/build-cache/b8aba45a836b4ad56dcf5d0a68d1b6ed4686e26c/output/AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-core-utils:25.3.1] /Users/JunHee/.android/build-cache/d083015550759cea92ee4bd2e4fedd5b77be00f7/output/AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-compat:25.3.1] /Users/JunHee/.android/build-cache/e750d97a6b220d8f3162ae98dd7c1d9a4e378820/output/AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:cardview-v7:25.3.1] /Users/JunHee/.android/build-cache/72c940f990dfe89e9e6d0e85d38a3941d31d5dab/output/AndroidManifest.xml:22:5-24:34
+	android:value
+		ADDED from [com.android.support:design:25.3.1] /Users/JunHee/.android/build-cache/3f5630d4ac96c803fd5a53bc8533772f764f7f21/output/AndroidManifest.xml:27:9-31
+	android:name
+		ADDED from [com.android.support:design:25.3.1] /Users/JunHee/.android/build-cache/3f5630d4ac96c803fd5a53bc8533772f764f7f21/output/AndroidManifest.xml:26:9-47

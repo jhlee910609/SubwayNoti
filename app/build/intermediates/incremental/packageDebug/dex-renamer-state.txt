@@ -1,0 +1,7 @@
+#Fri Jul 07 06:16:47 KST 2017
+base.0=/Users/JunHee/AndroidStudioProjects/SubwayNoti/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_b09382cb609af2bf194862512e0faac8d578c675
+renamed.1=classes2.dex
+renamed.0=classes.dex
+file.1=/Users/JunHee/AndroidStudioProjects/SubwayNoti/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_8417241eacc868ca699ec5e71b1a1cd96a626bc8/classes.dex
+base.1=/Users/JunHee/AndroidStudioProjects/SubwayNoti/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_8417241eacc868ca699ec5e71b1a1cd96a626bc8
+file.0=/Users/JunHee/AndroidStudioProjects/SubwayNoti/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_b09382cb609af2bf194862512e0faac8d578c675/classes.dex
